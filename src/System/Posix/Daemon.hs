@@ -67,7 +67,7 @@ import System.Posix.IO ( openFd, OpenMode(..), defaultFileFlags, closeFd
                        , createFile, fdWrite, fdRead
                        , LockRequest (..), setLock, waitToSetLock )
 import System.Posix.Process ( getProcessID, forkProcess, createSession )
-import System.Posix.Signals ( Signal, signalProcess, sigQUIT, sigKILL )
+import System.Posix.Signals
 
 -- | Where should the output (and input) of a daemon be redirected to?
 -- (we can't just leave it to the current terminal, because it may be

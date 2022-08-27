@@ -4,3 +4,5 @@ cabal-dev/
 cabal.project.local
 .stack-work/
 Setup.hs
+
+stack.yaml.lock
