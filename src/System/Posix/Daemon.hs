@@ -182,12 +182,12 @@ isRunning pidFile = do
 -- | Send 'sigQUIT' to the process recorded in the pidfile.  This
 -- gives the process a chance to close cleanly.
 kill :: FilePath -> IO ()
-kill = signalProcessByFilePath sigQUIT
+kill = signalProcessByFilePath sigTERM
 
 -- | Kill a process and wait for it to release its pidfile
 killAndWait :: FilePath -> IO ()
 killAndWait pidFile = do
-    signalProcessByFilePath sigQUIT pidFile
+    kill pidFile
     fd <- openFd pidFile ReadWrite Nothing defaultFileFlags
     waitToSetLock fd (WriteLock, AbsoluteSeek, 0, 0)
     closeFd fd
